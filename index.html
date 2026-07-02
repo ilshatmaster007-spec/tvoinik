@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 20px; background: #f5f5f5; }
+        form { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        label { display: block; margin: 18px 0 6px; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .section { margin-top: 30px; padding-top: 15px; border-top: 2px solid #0066cc; }
+        button { margin-top: 30px; padding: 14px 40px; background: #0066cc; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #0055aa; }
+        .success { color: green; margin-top: 15px; display: none; }
+    </style>
+</head>
+<body>
+    <h1>Анкета</h1>
+    
+    <form id="anketaForm" action="https://formspree.io/f/xyourcode" method="POST">
+        
+        <label>1. Фамилия Имя Отчество</label>
+        <input type="text" name="fio" required>
+
+        <label>2. Дата рождения</label>
+        <input type="date" name="birth_date">
+
+        <label>3. Место рождения</label>
+        <input type="text" name="birth_place">
+
+        <label>4. Место регистрации</label>
+        <input type="text" name="registration_place">
+
+        <label>5. Документы, удостоверяющие личность</label>
+        <textarea name="documents" rows="4" placeholder="Паспорт: серия, номер, дата выдачи, кем выдан&#10;Военный билет: ..."></textarea>
+
+        <div class="section">
+            <label>6. Места возможного нахождения</label>
+            <label>6.1 Место фактического проживания</label>
+            <input type="text" name="actual_residence">
+
+            <label>6.2 Места проживания родственников</label>
+            <textarea name="relatives_residence" rows="3"></textarea>
+
+            <label>6.3 Другие места наиболее вероятного нахождения</label>
+            <textarea name="other_locations" rows="3"></textarea>
+        </div>
+
+        <label>7. Образование</label>
+        <textarea name="education" rows="3"></textarea>
+
+        <label>8. Сведения о судимости</label>
+        <textarea name="criminal_record" rows="3"></textarea>
+
+        <label>9. Используемые номера сотовой (спутниковой) связи</label>
+        <input type="text" name="phone_numbers">
+
+        <label>10. Номера банковских карт (в т.ч. для денежного довольствия)</label>
+        <input type="text" name="bank_cards">
+
+        <label>11. Аккаунты в социальных сетях</label>
+        <textarea name="social_accounts" rows="5" placeholder="MAX:&#10;ТЕЛЕГРАМ:&#10;ВАТСАП:&#10;ВКонтакте:"></textarea>
+
+        <label>12. Личный номер</label>
+        <input type="text" name="personal_number">
+
+        <label>13. Табельный номер</label>
+        <input type="text" name="service_number">
+
+        <label>14. Когда и каким военным комиссариатом призван, номер телефона дежурного</label>
+        <textarea name="draft_info" rows="3"></textarea>
+
+        <label>15. Когда и каким пунктом отбора на контракт отобран, номер телефона дежурного</label>
+        <textarea name="contract_selection" rows="3"></textarea>
+
+        <label>16. Сведения об оружии и боеприпасах (закреплённое оружие: марка, номер, год выпуска)</label>
+        <textarea name="weapon_info" rows="4"></textarea>
+
+        <label>17. Особенности внешности (цвет волос, строение тела, описание лица и др.)</label>
+        <textarea name="appearance" rows="4"></textarea>
+
+        <label>18. Личные приметы (татуировки, шрамы, родимые пятна и т.д.)</label>
+        <textarea name="distinctive_features" rows="5"></textarea>
+
+        <label>19. Сведения о близких родственниках (степень родства, ФИО, дата рождения, место жительства, телефон и др.)</label>
+        <textarea name="relatives" rows="8"></textarea>
+
+        <button type="submit">Отправить анкету</button>
+    </form>
+
+    <div id="success" class="success">✅ Анкета успешно отправлена.</div>
+
+    <script>
+        const form = document.getElementById('anketaForm');
+        const success = document.getElementById('success');
+
+        form.addEventListener('submit', function() {
+            success.style.display = 'block';
+            setTimeout(() => success.style.display = 'none', 5000);
+        });
+    </script>
+</body>
+</html>
