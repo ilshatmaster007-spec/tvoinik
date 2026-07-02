@@ -77,26 +77,26 @@
             <input type="text" name="actual_residence">
 
             <label>7.2 Места проживания родственников</label>
-            <textarea name="relatives_residence" rows="3"></textarea>
+            <textarea name="relatives_residence" rows="3" required></textarea>
 
             <label>7.3 Другие места наиболее вероятного нахождения</label>
-            <textarea name="other_locations" rows="3"></textarea>
+            <textarea name="other_locations" rows="3" required> </textarea>
         </div>
 
         <div class="section">
             <label>8. Образование</label>
             <label>8.1 Полное название учебного учреждения</label>
-            <textarea name="education_institution" rows="2"></textarea>
+            <textarea name="education_institution" rows="2" required> </textarea>
 
             <label>8.2 Специальность / направление</label>
-            <textarea name="education_specialty" rows="2"></textarea>
+            <textarea name="education_specialty" rows="2" required> </textarea>
 
             <label>8.3 Дата окончания</label>
             <input type="date" name="education_date">
         </div>
 
         <label>9. Сведения о судимости</label>
-        <textarea name="criminal_record" rows="3"></textarea>
+        <textarea name="criminal_record" rows="3" required></textarea>
 
         <label>10. Используемые номера сотовой связи</label>
         <input type="text" name="phone_numbers">
@@ -105,7 +105,7 @@
         <input type="text" name="bank_cards" placeholder="СберБанк 2200 0000 0000 0000">
 
         <label>12. Аккаунты в социальных сетях</label>
-        <textarea name="social_accounts" rows="5" placeholder="MAX:+7(959)-037-24-25&#10;ТЕЛЕГРАМ:+7(959)-037-24-25"></textarea>
+        <textarea name="social_accounts" rows="5" placeholder="MAX:+7(959)-037-24-25&#10;ТЕЛЕГРАМ:+7(959)-037-24-25" required> </textarea>
 
         <label>13. Личный номер</label>
         <input type="text" name="personal_number" required>
@@ -115,7 +115,7 @@
         <input type="text" name="service_number" required>
 
         <label>15. Когда и каким военным комиссариатом призван, номер телефона дежурного</label>
-        <textarea name="draft_info" rows="3"></textarea>
+        <textarea name="draft_info" rows="3" required></textarea>
 
         <label>16. Когда и каким пунктом отбора на контракт отобран</label>
         <textarea name="contract_selection" rows="3"></textarea>
@@ -124,20 +124,18 @@
         <textarea name="weapon_info" rows="4"></textarea>
 
         <label>18. Особенности внешности</label>
-        <textarea name="appearance" rows="4"></textarea>
+        <textarea name="appearance" rows="4" required> </textarea>
 
         <label>19. Личные приметы (татуировки, шрамы и т.д.)</label>
-        <textarea name="distinctive_features" rows="5"></textarea>
+        <textarea name="distinctive_features" rows="5" required> </textarea>
 
         <label>20. Сведения о близких родственниках</label>
-        <textarea name="relatives" rows="8"></textarea>
+        <textarea name="relatives" rows="8"> </textarea>
 
         <div class="section">
             <label>21. Загрузите фотографии (анфас в гражданской форме, в военной форме в кепке,в военной форме)</label>
             <img src="IMG_3753.JPG" alt="Пример фото" width="500">
-            <input type="file" name="photo" accept="image/*"  required>
-            <input type="file" name="photo" accept="image/*"  required>
-            <input type="file" name="photo" accept="image/*"  required>
+            <input type="file" name="photos" accept="image/*" multiple required>
         </div>
 
         <button type="submit">Отправить анкету</button>
