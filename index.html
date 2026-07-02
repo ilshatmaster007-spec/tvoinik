@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -14,115 +13,119 @@
         button { margin-top: 30px; padding: 14px 40px; background: #0066cc; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
         button:hover { background: #0055aa; }
         .success { color: green; margin-top: 15px; display: none; }
+        img { max-width: 100%; height: auto; display: block; margin: 15px 0; }
     </style>
 </head>
 <body>
     <h1>Анкета</h1>
     
-    <form id="anketaForm" action="https://formspree.io/f/mkolpwnw" method="POST">
+    <form id="anketaForm" action="https://formspree.io/f/mkolpwnw" method="POST" enctype="multipart/form-data">
         
         <label>1. Фамилия Имя Отчество</label>
         <input type="text" name="fio" required>
 
         <label>2. Дата рождения</label>
-        <input type="date" name="birth_date"required>
+        <input type="date" name="birth_date" required>
 
         <label>3. Место рождения</label>
-        <input type="text" name="birth_place"required>
+        <input type="text" name="birth_place" required>
 
         <label>4. Место регистрации</label>
-        <input type="text" name="registration_place"required>
-
+        <input type="text" name="registration_place" required>
 
         <div class="section">
- 	<label>5. Паспорт <label>
-	<label> 5.1 Серия, номер документа </label>
-	<input type="text" name="serial_number_ID">
-	<label> 5.2 Дата выдачи документа </label>
-        <input type="date" name="ID_date"required>
-	<label> 5.3 Орган выдавший документ </label>
-	<input type="text" name="DDC_ID">
-	<label> 5.4 Код подразделения </label>
-	<input type="text" name="COD_ID">
+            <label>5. Паспорт</label>
+            <label>5.1 Серия, номер документа</label>
+            <input type="text" name="passport_serial">
 
-        	<div class="section">
- 	<label>6. Военный билет <label>
-	<label> 6.1 Серия, номер документа </label>
-      	<textarea name="social_accounts" rows="1" placeholder="АА №000000"></textarea>
-	<label> 6.2 Дата выдачи документа </label>
-        <input type="date" name="BCID_date"required>
-	<label> 6.3 Орган выдавший документ </label>
-	<input type="text" name="BCDDC_ID">
-             
+            <label>5.2 Дата выдачи</label>
+            <input type="date" name="passport_date" required>
 
-		 <div class="section">
+            <label>5.3 Орган, выдавший документ</label>
+            <input type="text" name="passport_issuer">
+
+            <label>5.4 Код подразделения</label>
+            <input type="text" name="passport_code">
+        </div>
+
+        <div class="section">
+            <label>6. Военный билет</label>
+            <label>6.1 Серия, номер документа</label>
+            <input type="text" name="military_serial" placeholder="АА №000000">
+
+            <label>6.2 Дата выдачи</label>
+            <input type="date" name="military_date" required>
+
+            <label>6.3 Орган, выдавший документ</label>
+            <input type="text" name="military_issuer">
+        </div>
+
+        <div class="section">
             <label>7. Места возможного нахождения</label>
             <label>7.1 Место фактического проживания</label>
             <input type="text" name="actual_residence">
+
             <label>7.2 Места проживания родственников</label>
             <textarea name="relatives_residence" rows="3"></textarea>
+
             <label>7.3 Другие места наиболее вероятного нахождения</label>
             <textarea name="other_locations" rows="3"></textarea>
         </div>
 
+        <div class="section">
+            <label>8. Образование</label>
+            <label>8.1 Полное название учебного учреждения</label>
+            <textarea name="education_institution" rows="2"></textarea>
 
-		<div class="section">
-        <label>7. Образование</label>
-        <textarea name="education" rows="1"></textarea>
-        <label>7.1. Полное название учебного учреждения </label>
-        <textarea name="education" rows="1"></textarea>
-        <label>7.2 Специальность/направление</label>
-        <textarea name="education" rows="1"></textarea>
-        <label>7.3 Дата окончания</label>
-        <input type="date" name="BCID_date"required
+            <label>8.2 Специальность / направление</label>
+            <textarea name="education_specialty" rows="2"></textarea>
+
+            <label>8.3 Дата окончания</label>
+            <input type="date" name="education_date">
         </div>
 
-
-        <label>8. Сведения о судимости</label>
+        <label>9. Сведения о судимости</label>
         <textarea name="criminal_record" rows="3"></textarea>
 
-        <label>9. Используемые номера сотовой (спутниковой) связи</label>
+        <label>10. Используемые номера сотовой связи</label>
         <input type="text" name="phone_numbers">
 
-        <label>10. Номера банковских карт (в т.ч. для денежного довольствия)</label>
-        <input type="text" placeholder="СберБанк 2200 0000 0000 0000"name="bank_cards">
+        <label>11. Номера банковских карт</label>
+        <input type="text" name="bank_cards" placeholder="СберБанк 2200 0000 0000 0000">
 
-        <label>11. Аккаунты в социальных сетях</label>
-        <textarea name="social_accounts" rows="5" placeholder="MAX:+7(959)-037-24-25&#10;ТЕЛЕГРАМ:+7(959)-037-24-25&#10;ВАТСАП:+7(959)-037-24-25&#10;ВКонтакте:@id79852255"></textarea>
+        <label>12. Аккаунты в социальных сетях</label>
+        <textarea name="social_accounts" rows="5" placeholder="MAX:+7(959)-037-24-25&#10;ТЕЛЕГРАМ:+7(959)-037-24-25"></textarea>
 
-        <label>12. Личный номер</label>
-        <input type="text" name="personal_number"required>
+        <label>13. Личный номер</label>
+        <input type="text" name="personal_number" required>
 
-        <label>13. Табельный номер</label>
-	<img src= "IMG_3628.jpg" alt= "Tab_ID" width="500">
-        <input type="text" name="service_number"required>
+        <label>14. Табельный номер</label>
+        <img src="IMG_3628.jpg" alt="Табельный номер" width="500">
+        <input type="text" name="service_number" required>
 
-        <label>14. Когда и каким военным комиссариатом призван, номер телефона дежурного</label>
+        <label>15. Когда и каким военным комиссариатом призван, номер телефона дежурного</label>
         <textarea name="draft_info" rows="3"></textarea>
 
-        <label>15. Когда и каким пунктом отбора на контракт отобран, номер телефона дежурного</label>
+        <label>16. Когда и каким пунктом отбора на контракт отобран</label>
         <textarea name="contract_selection" rows="3"></textarea>
 
-        <label>16. Сведения об оружии и боеприпасах (закреплённое оружие: марка, номер, год выпуска)</label>
+        <label>17. Сведения об оружии и боеприпасах</label>
         <textarea name="weapon_info" rows="4"></textarea>
 
-        <label>17. Особенности внешности (цвет волос, строение тела, описание лица и др.)</label>
+        <label>18. Особенности внешности</label>
         <textarea name="appearance" rows="4"></textarea>
 
-        <label>18. Личные приметы (татуировки, шрамы, родимые пятна и т.д.)</label>
+        <label>19. Личные приметы (татуировки, шрамы и т.д.)</label>
         <textarea name="distinctive_features" rows="5"></textarea>
 
-        <label>19. Сведения о близких родственниках (степень родства, ФИО, дата рождения, место жительства, телефон и др.)</label>
+        <label>20. Сведения о близких родственниках</label>
         <textarea name="relatives" rows="8"></textarea>
-		 
 
-		<div class="section">
-            <label>20 Загрузите фотографии</label>
-	<img src= "IMG_3753.JPG" alt= "Tab_ID" width="500">
-            <input type="file" name="photo" accept= "image/*" required>
-	</label><br><br>
+        <div class="section">
+            <label>21. Загрузите фотографии</label>
+            <img src="IMG_3753.JPG" alt="Пример фото" width="500">
+            <input type="file" name="photo" accept="image/*" required>
         </div>
-
 
         <button type="submit">Отправить анкету</button>
     </form>
