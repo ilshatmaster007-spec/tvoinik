@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<body>
+    <h1>Анкета</h1>
+    
+    <div id="password-screen">
+        <h2>Введите пароль для доступа к анкете</h2>
+        <input type="password" id="passInput" placeholder="Пароль" style="padding:10px; width:300px; font-size:16px;">
+        <button onclick="checkPassword()" style="padding:10px 20px; margin-left:10px;">Войти</button>
+        <p id="error" style="color:red; display:none;">Неверный пароль</p>
+    </div>
+
+    <div id="form-screen" style="display:none;">
+        <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -143,3 +154,23 @@
     </script>
 </body>
 </html>
+    </div>
+
+    <script>
+        const correctPass = "МАРКЕР2026";  // ← ИЗМЕНИ НА СВОЙ
+
+        function checkPassword() {
+            const input = document.getElementById("passInput").value;
+            if (input === correctPass) {
+                document.getElementById("password-screen").style.display = "none";
+                document.getElementById("form-screen").style.display = "block";
+            } else {
+                document.getElementById("error").style.display = "block";
+            }
+        }
+
+        // Enter тоже работает
+        document.getElementById("passInput").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") checkPassword();
+        });
+    </script>
