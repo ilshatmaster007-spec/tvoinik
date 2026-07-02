@@ -25,31 +25,58 @@
         <input type="text" name="fio" required>
 
         <label>2. Дата рождения</label>
-        <input type="date" name="birth_date">
+        <input type="date" name="birth_date"required>
 
         <label>3. Место рождения</label>
-        <input type="text" name="birth_place">
+        <input type="text" name="birth_place"required>
 
         <label>4. Место регистрации</label>
-        <input type="text" name="registration_place">
+        <input type="text" name="registration_place"required>
 
-        <label>5. Документы, удостоверяющие личность</label>
-        <textarea name="documents" rows="4" placeholder="Паспорт: серия, номер, дата выдачи, кем выдан&#10;Военный билет: ..."></textarea>
 
         <div class="section">
-            <label>6. Места возможного нахождения</label>
-            <label>6.1 Место фактического проживания</label>
+ 	<label>5. Паспорт <label>
+	<label> 5.1 Серия, номер документа </label>
+	<input type="text" name="serial_number_ID">
+	<label> 5.2 Дата выдачи документа </label>
+        <input type="date" name="ID_date"required>
+	<label> 5.3 Орган выдавший документ </label>
+	<input type="text" name="DDC_ID">
+	<label> 5.4 Код подразделения </label>
+	<input type="text" name="COD_ID">
+
+        	<div class="section">
+ 	<label>6. Военный билет <label>
+	<label> 6.1 Серия, номер документа </label>
+      	<textarea name="social_accounts" rows="1" placeholder="АА №000000"></textarea>
+	<label> 6.2 Дата выдачи документа </label>
+        <input type="date" name="BCID_date"required>
+	<label> 6.3 Орган выдавший документ </label>
+	<input type="text" name="BCDDC_ID">
+             
+
+		 <div class="section">
+            <label>7. Места возможного нахождения</label>
+            <label>7.1 Место фактического проживания</label>
             <input type="text" name="actual_residence">
-
-            <label>6.2 Места проживания родственников</label>
+            <label>7.2 Места проживания родственников</label>
             <textarea name="relatives_residence" rows="3"></textarea>
-
-            <label>6.3 Другие места наиболее вероятного нахождения</label>
+            <label>7.3 Другие места наиболее вероятного нахождения</label>
             <textarea name="other_locations" rows="3"></textarea>
         </div>
 
+
+		<div class="section">
         <label>7. Образование</label>
-        <textarea name="education" rows="3"></textarea>
+        <textarea name="education" rows="1"></textarea>
+        <label>7.1. Полное название учебного учреждения </label>
+        <textarea name="education" rows="1"></textarea>
+        <label>7.2 Специальность/направление</label>
+        <textarea name="education" rows="1"></textarea>
+        <label>7.3 Дата окончания</label>
+        <input type="date" name="BCID_date"required
+        </div>
+
 
         <label>8. Сведения о судимости</label>
         <textarea name="criminal_record" rows="3"></textarea>
@@ -58,16 +85,17 @@
         <input type="text" name="phone_numbers">
 
         <label>10. Номера банковских карт (в т.ч. для денежного довольствия)</label>
-        <input type="text" name="bank_cards">
+        <input type="text" placeholder="СберБанк 2200 0000 0000 0000"name="bank_cards">
 
         <label>11. Аккаунты в социальных сетях</label>
-        <textarea name="social_accounts" rows="5" placeholder="MAX:&#10;ТЕЛЕГРАМ:&#10;ВАТСАП:&#10;ВКонтакте:"></textarea>
+        <textarea name="social_accounts" rows="5" placeholder="MAX:+7(959)-037-24-25&#10;ТЕЛЕГРАМ:+7(959)-037-24-25&#10;ВАТСАП:+7(959)-037-24-25&#10;ВКонтакте:@id79852255"></textarea>
 
         <label>12. Личный номер</label>
-        <input type="text" name="personal_number">
+        <input type="text" name="personal_number"required>
 
         <label>13. Табельный номер</label>
-        <input type="text" name="service_number">
+	<img src= "IMG_3628.jpg" alt= "Tab_ID" width="500">
+        <input type="text" name="service_number"required>
 
         <label>14. Когда и каким военным комиссариатом призван, номер телефона дежурного</label>
         <textarea name="draft_info" rows="3"></textarea>
@@ -86,6 +114,15 @@
 
         <label>19. Сведения о близких родственниках (степень родства, ФИО, дата рождения, место жительства, телефон и др.)</label>
         <textarea name="relatives" rows="8"></textarea>
+		 
+
+		<div class="section">
+            <label>20 Загрузите фотографии</label>
+	<img src= "IMG_3753.JPG" alt= "Tab_ID" width="500">
+            <input type="file" name="photo" accept= "image/*" required>
+	</label><br><br>
+        </div>
+
 
         <button type="submit">Отправить анкету</button>
     </form>
