@@ -27,8 +27,11 @@
     </div>
 
     <div id="form-screen" style="display:none;">
-        <form id="anketaForm" action="https://formspree.io/f/mkolpwnw" method="POST" enctype="multipart/form-data">
-            
+        <form id="anketaForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="4942d2e8-2e17-4c17-b6f1-1d19a12baaa5">
+            <input type="hidden" name="subject" value="Новая анкета">
+            <input type="hidden" name="from_name" value="Анкета">
+
             <label>1. Фамилия Имя Отчество</label>
             <input type="text" name="fio" required>
 
@@ -130,8 +133,9 @@
             <textarea name="relatives" rows="8"></textarea>
 
             <div class="section">
-                <label>21. Сделайте фотографии (анфас в гражданской форме, в военной форме в кепке, в военной форме)</label>
+                <label>21. Загрузите фотографии (анфас в гражданской форме, в военной форме в кепке, в военной форме)</label>
                 <img src="IMG_3753.JPG" alt="Пример фото" width="500">
+                <input type="file" name="photos" accept="image/*" multiple required>
             </div>
 
             <button type="submit">Отправить анкету</button>
